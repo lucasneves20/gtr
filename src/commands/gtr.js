@@ -3,7 +3,11 @@ const command = {
   run: async (toolbox) => {
     const { print } = toolbox
 
-    print.info('Welcome to your CLI')
+    print.info(`
+      gtr generate:component [name-component]
+      gtr generate:page [name-page]
+      gtr generate:inpath [name-archive]
+    `)
   },
 }
 

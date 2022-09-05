@@ -1,6 +1,6 @@
 module.exports = {
-  name: 'generate:component',
-  alias: ['g'],
+  name: 'generate:usecase',
+  alias: ['g uc'],
   run: async (toolbox) => {
     const {
       parameters,
@@ -17,26 +17,26 @@ module.exports = {
 
     await generate({
       template: 'component-simple.tsx.ejs',
-      target: `src/components/${name}/${name}.tsx`,
+      target: `src/useCase/${name}/${name}.tsx`,
       props: { name },
     })
 
     await generate({
       template: 'stitches-component.ts.ejs',
-      target: `src/components/${name}/${name}-stitches.ts`,
+      target: `src/useCase/${name}/${name}-stitches.ts`,
       props: { name },
     })
 
     await generate({
       template: 'type-component.ts.ejs',
-      target: `src/components/${name}/${name}-type.ts`,
+      target: `src/useCase/${name}/${name}-type.ts`,
       props: { name },
     })
 
     success(`
-        Arquivo gerado components/${name}/${name}.tsx
-        Arquivo gerado components/${name}/${name}-stitches.ts
-        Arquivo gerado components/${name}/${name}-type.ts
+        Arquivo gerado useCase/${name}/${name}.tsx
+        Arquivo gerado useCase/${name}/${name}-stitches.ts
+        Arquivo gerado useCase/${name}/${name}-type.ts
       `)
   },
 }

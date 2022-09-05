@@ -16,13 +16,12 @@ test('outputs help', async () => {
 })
 
 test('generates file', async () => {
-  const output = await cli('generate foo')
+  const output = await cli('generate:component foo')
 
-  expect(output).toContain('Generated file at models/foo-model.js')
-  const foomodel = filesystem.read('models/foo-model.js')
+  expect(output).toContain('Generated file at component/foo/foo.tsx')
+  const foomodel = filesystem.read('component/foo/foo.tsx')
 
-  expect(foomodel).toContain(`module.exports = {`)
-  expect(foomodel).toContain(`name: 'foo'`)
+  expect(foomodel).toContain(`import react from 'react'`)
 
   // cleanup artifact
   filesystem.remove('models')
