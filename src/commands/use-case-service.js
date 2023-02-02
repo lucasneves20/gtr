@@ -18,28 +18,28 @@ module.exports = {
 	// service
     await generate({
       template: 'nest-use-case.ts.ejs',
-      target: `src/useCase/${nameUseCase}/${nameUseCase}.service.ts`,
+      target: `src/useCases/${nameUseCase}/${nameUseCase}.service.ts`,
       props: { nameUseCase },
     })
 
 	// contract
     await generate({
       template: 'nest-type.d.ts.ejs',
-      target: `src/useCase/${nameUseCase}/contract/${nameUseCase}.d.ts`,
+      target: `src/useCases/${nameUseCase}/contract/${nameUseCase}.d.ts`,
       props: { nameUseCase },
     })
 
 	// mock
     await generate({
       template: 'nest-mock.ts.ejs',
-      target: `src/useCase/${nameUseCase}/mock/${nameUseCase}-mock.ts`,
+      target: `src/useCases/${nameUseCase}/mock/${nameUseCase}-mock.ts`,
       props: { nameUseCase },
     })
 
     success(`
-        create achive in path useCase ${nameUseCase}/${nameUseCase}.service.ts
-        create contract in path useCase ${nameUseCase}/contract/${nameUseCase}.d.ts
-        create mock in path useCase ${nameUseCase}/mock/${nameUseCase}-mock.ts
+        create achive in path useCases ${nameUseCase}/${nameUseCase}.service.ts
+        create contract in path useCases ${nameUseCase}/contract/${nameUseCase}.d.ts
+        create mock in path useCases ${nameUseCase}/mock/${nameUseCase}-mock.ts
       `)
   },
 }

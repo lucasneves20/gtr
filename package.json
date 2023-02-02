@@ -1,6 +1,6 @@
 {
   "name": "gtr-webmaster",
-  "version": "0.0.11",
+  "version": "0.1.1",
   "description": "gtr CLI",
   "bin": {
     "gtr": "bin/gtr"
