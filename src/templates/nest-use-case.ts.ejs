@@ -1,0 +1,10 @@
+import { I<%= props.nameUseCase%>Class } from './contracts';
+import { Injectable } from '@nestjs/common';
+import { PrismaService } from '../../devices/prisma.service';
+
+@Injectable()
+export class <%= props.nameUseCase%>Service implements I<%= props.nameUseCase%>Class {
+	constructor(private HandleDB: PrismaService) {}
+	
+	async foo() {}
+}
