@@ -7,6 +7,7 @@ const command = {
       gtr generate:component [name-component]
       gtr generate:page [name-page]
       gtr generate:inpath [name-archive]
+	  gtr use-case [name-archive]
     `)
   },
 }
