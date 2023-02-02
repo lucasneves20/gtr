@@ -17,26 +17,26 @@ module.exports = {
 
     await generate({
       template: 'component-simple.tsx.ejs',
-      target: `src/useCase/${name}/${name}.tsx`,
+      target: `src/useCases/${name}/${name}.tsx`,
       props: { name },
     })
 
     await generate({
       template: 'stitches-component.ts.ejs',
-      target: `src/useCase/${name}/${name}-stitches.ts`,
+      target: `src/useCases/${name}/${name}-stitches.ts`,
       props: { name },
     })
 
     await generate({
       template: 'type-component.ts.ejs',
-      target: `src/useCase/${name}/${name}-type.ts`,
+      target: `src/useCases/${name}/${name}-type.ts`,
       props: { name },
     })
 
     success(`
-        Arquivo gerado useCase/${name}/${name}.tsx
-        Arquivo gerado useCase/${name}/${name}-stitches.ts
-        Arquivo gerado useCase/${name}/${name}-type.ts
+        Arquivo gerado useCases/${name}/${name}.tsx
+        Arquivo gerado useCases/${name}/${name}-stitches.ts
+        Arquivo gerado useCases/${name}/${name}-type.ts
       `)
   },
 }
