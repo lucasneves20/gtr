@@ -1,0 +1,26 @@
+import { TestingModule, Test } from '@nestjs/testing';
+import { fooController } from './foo.controller';
+import { fooService } from './foo.service';
+
+describe('<%= props.nameUseCase%> -- use case --', () => {
+	let fooController: fooController;
+	let fooService: fooService;
+
+	beforeEach(async () => {
+		const module: TestingModule = await Test.createTestingModule({
+			controllers: [fooController],
+			providers: [
+				{
+					provide: fooService,
+					useValue: {
+						foo : jest.fn().mockResolvedValue(fooMock),
+						bar : jest.fn(),
+					},
+				},
+			],
+		}).compile();
+
+		fooController = module.get<fooController>(fooController);
+		fooService = module.get<fooService>(fooService);
+	});
+});
