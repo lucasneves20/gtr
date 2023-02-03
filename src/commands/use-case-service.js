@@ -35,11 +35,18 @@ module.exports = {
       target: `src/useCases/${nameUseCase}/mock/${nameUseCase}-mock.ts`,
       props: { nameUseCase },
     })
+    
+	await generate({
+      template: 'nest-test-use-case.spec.ts.ejs',
+      target: `src/useCases/${nameUseCase}/${nameUseCase}.service.spec.ts`,
+      props: { nameUseCase },
+    })
 
     success(`
         create achive in path useCases ${nameUseCase}/${nameUseCase}.service.ts
         create contract in path useCases ${nameUseCase}/contract/${nameUseCase}.d.ts
         create mock in path useCases ${nameUseCase}/mock/${nameUseCase}-mock.ts
+        create test in path useCases ${nameUseCase}/${nameUseCase}.service.spec.ts
       `)
   },
 }
